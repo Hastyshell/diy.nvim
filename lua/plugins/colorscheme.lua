@@ -8,6 +8,7 @@ return { -- You can easily change to a different colorscheme.
   config = function()
     ---@diagnostic disable-next-line: missing-fields
     require('tokyonight').setup {
+      terminal_colors = false,
       styles = {
         comments = { italic = false }, -- Disable italics in comments
       },

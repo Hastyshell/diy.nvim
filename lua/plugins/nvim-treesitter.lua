@@ -1,5 +1,9 @@
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
+  -- The master branch of nvim-treesitter is now frozen and they’re now working on the main branch.
+  -- The new branch is a complete rewrite.
+  -- TODO: delete branch = 'master' when ready, and rewrite the nvim-treesitter config
+  branch = 'master',
   build = ':TSUpdate',
   main = 'nvim-treesitter.configs', -- Sets main module to use for opts
   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`

@@ -1,3 +1,6 @@
+return {} -- disabled
+
+--[[
 return {
 
   { -- Linting
@@ -58,3 +61,4 @@ return {
     end,
   },
 }
+]]

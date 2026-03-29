@@ -172,9 +172,9 @@ return {
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = require 'plugins.extensions.lsp-servers'
-    local nix_path = os.getenv 'NIX_PATH'
+    local is_nix = vim.uv.exepath():find '/nix/store' ~= nil
 
-    if not nix_path or nix_path == '' then
+    if not is_nix then
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
       --  other tools, you can run
@@ -193,9 +193,13 @@ return {
     end
 
     for server_name, server in pairs(servers) do
-      server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-      vim.lsp.config[server_name] = server
-      vim.lsp.enable(server_name)
+      local default_cmd = (vim.lsp.config[server_name] or {}).cmd
+      local cmd = (server.cmd or default_cmd or {})[1] or server_name
+      if not is_nix or vim.fn.executable(cmd) == 1 then
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        vim.lsp.config[server_name] = server
+        vim.lsp.enable(server_name)
+      end
     end
   end,
 }

@@ -1,9 +1,9 @@
 # diy.nvim
 
 ## Introduction
-This is my own Neovim configuration, based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
+This is my own Neovim configuration. It started from [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) and has since been heavily customized.
 
-Provide modular configuration and some customized plugins, works ok on Linux an Mac.
+Provide modular configuration and some customized plugins, works ok on Linux and Mac.
 
 ### Install Neovim
 
@@ -21,7 +21,7 @@ External Requirements:
 
 ### Install diy.nvim
 ```sh
-git clone https://github.com/TangSiyang2001/diy.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone https://github.com/Hastyshell/diy.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 Could use alias to start if config directory name is not nvim.
@@ -30,6 +30,5 @@ alias nvim-alias='NVIM_APPNAME="alias-config-dir" nvim'
 ```
 Then start with nvim-alias.
 
-### More infomation
-Refer to [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
-
+### More information
+For the original starter project, see [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).

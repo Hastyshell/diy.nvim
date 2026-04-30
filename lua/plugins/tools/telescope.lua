@@ -95,6 +95,9 @@ return { -- Fuzzy Finder (files, lsp, etc)
       -- },
       -- pickers = {}
       defaults = {
+        mappings = {
+          i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        },
         -- layout_strategy = 'vertical',
         -- layout_config = { height = 0.95, widthg = 0.5 },
       },
